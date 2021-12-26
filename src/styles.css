@@ -1,0 +1,79 @@
+body {
+  font-family: "Inter", sans-serif !important;
+}
+
+[data-dialog] {
+  position: relative;
+  background: white;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 4px;
+  padding: 16px;
+  transition: transform 250ms ease-in-out;
+  z-index: 9999;
+}
+
+[role="dialog"] > [role="listbox"] {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+[role="dialog"] > [role="combobox"] {
+  margin-bottom: 8px;
+  height: 2em;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+[role="dialog"] > [role="combobox"]:focus {
+  border-color: royalblue;
+}
+
+[role="separator"] {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background: #ddd;
+}
+
+[role="option"],
+[role^="menuitem"] {
+  list-style: none;
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  /* Necessary for text/icon alignment */
+  line-height: 1;
+  gap: 4px;
+  padding: 0.5em;
+  background: none;
+  border: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  cursor: default;
+}
+
+[role="option"][aria-selected="true"],
+[role="option"][data-focus-visible],
+[role^="menuitem"]:focus,
+[role^="menuitem"]:hover {
+  background-color: royalblue;
+  color: white;
+}
+
+[role="option"][aria-expanded="true"]:not([data-focus-visible]),
+[role="menuitem"][aria-expanded="true"]:not([data-focus-visible]) {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+[role="option"][aria-selected="true"]:hover {
+  background-color: royalblue;
+  color: white;
+}
+
+[role="option"][aria-disabled="true"],
+[role^="menuitem"][aria-disabled="true"] {
+  opacity: 0.5;
+}
